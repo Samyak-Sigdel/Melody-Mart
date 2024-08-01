@@ -9,15 +9,17 @@ export const Register = () => {
     <div className="login">
 
     <section class="bg-gray-50 dark:bg-gray-900">
-    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-[url('https://cdn.pixabay.com/photo/2024/04/18/19/16/ai-generated-8704872_1280.png')]  bg-cover  opacity: 0.5">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-[url('https://cdn.pixabay.com/photo/2024/04/18/19/16/ai-generated-8704872_1280.png')]  bg-cover ">
+    
   <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white text-white ">
       < BsSpeakerFill color='white' />
       <div className="px-3 py-1 ">
       Melody Mart   
       </div>
   </a>
-  <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 ml-15">
-      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+  <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-lg xl:p-5 dark:bg-gray-800 dark:border-gray-700 ml-15 px-8">
+
+      <div class="p-6 space-y-4 md:space-y- sm:p-8">
           <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign Up
           </h1>
@@ -32,6 +34,10 @@ export const Register = () => {
         <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
       </div>
       <div class="mb-5">
+      <div class="mb-5 mt-5">
+        <label for="phoneno" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone no</label>
+        <input type="phoneno" id="phoneno" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
+      </div>
         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
         <input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
       </div>
