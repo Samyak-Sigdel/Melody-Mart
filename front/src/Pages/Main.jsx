@@ -9,7 +9,8 @@ export const Main = () => {
     <div>
         <Navbar />
         {/* <Letterboard /> */}
-        <Contact />
+        
+        
         
     </div>
   )
