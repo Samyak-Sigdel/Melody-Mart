@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.main {
+    background-color: rgb(203, 203, 203);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif; /* Apply Open Sans font to the whole container */
+}
+  
+.instruments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Changed to 4 columns */
+    gap: 20px;
+}
+  
+.instrument {
+    background-color: aliceblue;
+    padding: 25px;
+    height: 400px; /* Increased height */
+    width: 350px;  /* Adjusted width to fit 4 in a row */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    transition: transform 0.6s;
+}
+  
+.category-name p {
+    font-weight: bold;
+    margin: 0;
+    text-align: center; /* Center the text inside the p tag */
+}
+  
+.img {
+    height: 150px;
+    width: 150px;
+    margin: 10px 0;
+}
+  
+.img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+  
+.category-description {
+    text-align: center;
+    padding: 10px; /* Added padding for better text spacing */
+}
+  
+.instrument:hover {
+    transform: scale(1.05);
+}

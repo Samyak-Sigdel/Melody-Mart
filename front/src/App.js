@@ -7,6 +7,7 @@ import { Login } from './Pages/Login';
 import { Register } from './Pages/Register';
 
 import { Main } from './Pages/Main';
+import { Category } from './Pages/Category';
 
 
 
@@ -22,7 +23,7 @@ function App() {
     <Route path='/login' element={<Login/>}/>
     <Route path='/register' element={<Register/>}/>
     <Route path='/main' element={<Main/>}/>
-    <Route path='category' element={<Category/>}/>
+    <Route path='/category' element={<Category/>}/>
 
 
 
