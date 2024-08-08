@@ -10,27 +10,27 @@ export const Instruments = () => {
     },
     {
       name: 'Piano',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Grand_piano_by_Steinway_%26_Sons.jpg/1200px-Grand_piano_by_Steinway_%26_Sons.jpg',
+      img: "https://i.pinimg.com/564x/f5/32/27/f53227feb202591ffa42b327f9414810.jpg",
       description: 'The piano is a large keyboard musical instrument with a wooden case enclosing a soundboard and metal strings, which are struck by hammers when the keys are pressed.'
     },
     {
       name: 'Violin',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Violin_VL100.png',
+      img: 'https://i.pinimg.com/564x/8b/24/03/8b24038ff83ff27aa7dd2e2e5281b3d5.jpg',
       description: 'The violin is a string instrument which has four strings and is played with a bow. It is the smallest and highest-pitched instrument in the violin family of string instruments.'
     },
     {
       name: 'Drums',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Drumkit.jpg',
+      img: 'https://i.pinimg.com/736x/3f/46/f3/3f46f38ea0b2e0e5a5c30b93e08e4290.jpg',
       description: 'Drums are percussion instruments and are the oldest form of instruments, existing in a wide variety of shapes and sizes and producing sounds through vibrations created when struck.'
     },
     {
       name: 'Electric Guitar',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/2007FenderStratocaster.jpg',
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgoBsPj6e8Bm--cpgvzDl5M3D2p9A_yluk7A&s',
       description: 'The electric guitar is a guitar that uses one or more pickups to convert the vibration of its strings into electrical signals, which ultimately are reproduced as sound by loudspeakers.'
     },
     {
       name: 'Flute',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Yamaha_Concert_Flute.jpg',
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUhHzP3ebPra6cQ7nIBQISSz4js9IRamFKng&s',
       description: 'The flute is a family of musical instruments in the woodwind group. Unlike woodwind instruments with reeds, a flute is an aerophone or reedless wind instrument that produces its sound from the flow of air across an opening.'
     }
   ];

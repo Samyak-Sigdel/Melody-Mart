@@ -12,8 +12,8 @@ export const Register = () => {
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-[url('https://cdn.pixabay.com/photo/2024/04/18/19/16/ai-generated-8704872_1280.png')]  bg-cover ">
     
   <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white text-white ">
-      < BsSpeakerFill color='white' />
-      <div className="px-3 py-1 ">
+      < BsSpeakerFill color='white'  size={50} />
+      <div className="px-3 py-1  text-4xl ">
       Melody Mart   
       </div>
   </a>

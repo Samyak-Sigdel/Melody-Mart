@@ -12,8 +12,9 @@ export const Login = () => {
     <section className="h-screen bg-gray-50 dark:bg-gray-900">
         <div className="flex flex-col items-center justify-center h-full px-6 py-8 mx-auto bg-[url('https://cdn.pixabay.com/photo/2024/04/18/19/16/ai-generated-8704872_1280.png')] bg-cover">
             <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-                <BsSpeakerFill color='white' />
-                <div className="px-3 py-3 text-white font-large">
+          
+            <BsSpeakerFill size={50} color='white' />
+                <div className="px-3 py-3 text-white font-large text-4xl ">
                     Melody Mart
                 </div>
             </a>
