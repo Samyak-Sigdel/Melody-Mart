@@ -1,5 +1,6 @@
-import React from 'react'
-import './Instrument.css'
+import React from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import './Instrument.css';
 
 export const Instruments = () => {
   const instruments = [
@@ -20,7 +21,7 @@ export const Instruments = () => {
     },
     {
       name: 'Drums',
-      img: 'https://i.pinimg.com/736x/3f/46/f3/3f46f38ea0b2e0e5a5c30b93e08e4290.jpg',
+      img: 'https://www.superprof.com.au/blog/wp-content/uploads/2018/06/drums.jpg',
       description: 'Drums are percussion instruments and are the oldest form of instruments, existing in a wide variety of shapes and sizes and producing sounds through vibrations created when struck.'
     },
     {
@@ -40,7 +41,7 @@ export const Instruments = () => {
       <div className="instruments-grid">
         {instruments.map((instrument, index) => (
           <div className="instrument" key={index}>
-            <div className="category-name">
+            <Link to={`/${instrument.name.toLowerCase()}`} className="category-name">  {/* Add Link to navigate */}
               <p>{instrument.name}</p>
               <div className="img">
                 <img src={instrument.img} alt={instrument.name} />
@@ -48,7 +49,7 @@ export const Instruments = () => {
               <div className="category-description">
                 {instrument.description}
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>

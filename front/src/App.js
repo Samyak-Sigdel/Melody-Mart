@@ -8,6 +8,7 @@ import { Register } from './Pages/Register';
 
 import { Main } from './Pages/Main';
 import { Category } from './Pages/Category';
+import { Subcategory } from './Pages/Subcategory';
 
 
 
@@ -15,7 +16,7 @@ function App() {
   return (
     <div >
 
-
+    <Navbar />
     <BrowserRouter>
     
     <Routes>
@@ -24,7 +25,7 @@ function App() {
     <Route path='/register' element={<Register/>}/>
     <Route path='/main' element={<Main/>}/>
     <Route path='/category' element={<Category/>}/>
-
+    <Route path='/guitar' element={<Subcategory category="guitar"/>}/>
 
 
     </Routes>

@@ -1,34 +1,69 @@
-import React from 'react';
-import './Contact.css';
+import React, { useState } from 'react';
+import './Contact.css';  // Import the CSS file
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log(formData);
+  };
+
   return (
     <div className="contact-container">
-      <div className="contact-info">
-        <h2>Contact us</h2>
-        <h3>GET IN TOUCH WITH US</h3>
-        <p>Location : Boudha, Kathmandu</p>
-        <p>Phone number: 9863482899</p>
-        <p>Email address: samyaksigdel77@gmail.com</p>
-      </div>
       <div className="contact-form">
-        <form>
+        <h2>Send us a Message</h2>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" placeholder="First name" />
+            <label htmlFor="fullName">Full Name*</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder=""
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="example@domain.com" />
+            <label htmlFor="email">Email*</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder=""
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="form-group">
-            <label htmlFor="phone">Phone</label>
-            <input type="tel" id="phone" placeholder="123-456-7890" />
+            <label htmlFor="message">Message*</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder=""
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
           </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea id="message" placeholder="Add notes for our team"></textarea>
-          </div>
+          <button type="submit" className="submit-button">
+            Send Message
+          </button>
         </form>
       </div>
     </div>

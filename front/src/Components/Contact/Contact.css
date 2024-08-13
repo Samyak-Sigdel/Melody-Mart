@@ -1,71 +1,80 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .contact-container {
     display: flex;
-
-    background-color: #0e0e0eed;
-    color: rgb(219, 218, 218);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fefefe; /* light gray */
     padding: 20px;
-  }
-  
-  .contact-info {
-    width: 60%;
-    padding-right: 40px; /* Increased right padding */
-    margin-left: 10px;
-    padding-top: 50px;
-  }
+}
 
-  .contact-info h2{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
-  }
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(3, 3, 3, 0.1);
+    max-width: 550px;
+    width: 100%;
+}
 
-  .contact-info h3{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 500;
-    font-size: 30px;
-    padding-bottom: 15px;
-    padding-top: 10px;
-  }
-
-  
-  .contact-info p{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 17px;
-  }
-
-
-
-
-
-
-  
-  .contact-form {
-    width: 50%;
-    padding-left: 40px; /* Added left padding */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-  .form-group {
+.contact-form h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
     margin-bottom: 15px;
-  }
-  
-  .form-group label {
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
     display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 60%;
-    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #374151; /* dark gray */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 1rem;
+    border: 1px solid #d1d5db; /* light gray */
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #000000; /* blue */
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #030304; /* blue */
     border: none;
-    border-radius: 5px;
-  }
-  
-  .form-group input {
-    height: 40px;
-  }
-  
-  .form-group textarea {
-    height: 100px;
-  }
-  
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #000000; /* darker blue */
+}
