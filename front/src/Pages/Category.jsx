@@ -7,7 +7,7 @@ import Footer from '../Components/Footer/Footer'
 export const Category = () => {
   return (
     <div>
-
+      <Navbar />
       <Instruments />
       <Footer />
 

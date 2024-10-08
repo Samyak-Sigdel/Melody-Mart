@@ -1,43 +1,73 @@
-.shopcategory-banner{
+.shopcategory-banner {
     display: block;
-    margin : 30px auto;
+    margin: 30px auto;
     width: 82%;
 }
 
-.shopcategory-indexSort{
+.shopcategory-indexSort {
     display: flex;
     margin: 0px 170px;
     justify-content: space-between;
     align-items: center;
 }
 
-.shopcategory-sort{
+.shopcategory-sort {
     padding: 10px 20px;
     border-radius: 40px;
     border: 1px solid #888;
+    display: flex;
+    align-items: center;
 }
 
-.shopcategory-sort img{
+.shopcategory-sort img {
     height: 15px;
     width: 15px;
 }
 
-.shopcategory-indexSort p span{
+.shopcategory-indexSort p span {
     font-weight: 600;
 }
 
-.shopcategory-products{
-    margin: 20px 170px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 80px;
+.shopcategory-products {
+    display: flex;
+    justify-content: center; /* Center items more evenly */
+    flex-wrap: wrap; /* Allow items to wrap to next line */
+    gap: 10px; /* Reduced space between items */
+    margin: 20px 0; /* Add some margin to the top and bottom */
 }
 
-.shopcategory-loadmore{
+.shopcategory-products > div {
+    background-color: #ffffff; /* Light background for items */
+    border: 1px solid #ddd; /* Border around items */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Reduced padding inside each item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth hover effect */
+    width: 600px; /* Restrict max width for better alignment */
+    height: 250px;
+    text-align: center; /* Center align text */
+}
+
+.shopcategory-products img {
+    width: 200px; /* Make the image take the full width of its container */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+    border-radius: 8px; /* Optional: add some rounded corners */
+}
+
+
+
+
+
+.shopcategory-products > div:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.shopcategory-loadmore {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 150px auto;
+    margin: 50px auto; /* Adjusted margin */
     width: 233px;
     height: 69px;
     border-radius: 75px;
@@ -45,4 +75,5 @@
     color: #787878;
     font-size: 18px;
     font-weight: 500;
+    cursor: pointer; /* Pointer cursor on hover */
 }

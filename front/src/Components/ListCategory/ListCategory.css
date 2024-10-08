@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.main {
+    background-color: rgb(248, 248, 248);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ins-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding-left: 5px;
+}
+
+.ins {
+    background-color: #fff;
+    padding: 7px;
+    height: 310px; /* Increased height for better spacing */
+    width: 260px;  /* Adjusted width for a more balanced look */
+    box-sizing: border-box;
+  
+    flex-direction: column;
+    align-items: center;
+
+    transition: transform 0.2s, box-shadow 0.3s;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+ .ins:hover{
+    transform: scale(1.1);
+ }
+
+.cat-name p {
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+}
+
+.image {
+    height: 200px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cat-des {
+    background-color: rgb(65, 65, 65);
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    color: #ffffff; /* Color for "View More" text */
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.cat-des:hover {
+    color: #000000; /* Darker blue on hover */
+   background-color: #fff;
+}

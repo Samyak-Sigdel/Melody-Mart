@@ -1,45 +1,54 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Items } from '../Components/Items/Items';
-import './Css/Subcategory.css'
+import './Css/Subcategory.css';
 
 import { Shopcontext } from '../Context/Shopcontext'; 
+import { ListCategory } from '../Components/ListCategory/ListCategory';
+import { Navbar } from '../Components/Navbar/Navbar';
 
 export const Subcategory = (props) => {
-    const {all_product} = useContext(Shopcontext) || {};
- 
-  return (
-    <div className='shop-category'>
-    
-   
+    const { all_product } = useContext(Shopcontext);
 
-    <div className="shopcategory-indexSort">
-      <p>
-        <span> Showing 1-12  </span>out of 36 products
-      </p>
+    if (!all_product) {
+        return <div>Loading products...</div>; // Handles the case where all_product is undefined
+    }
 
-      <div className="shopcategory-sort">
-        sort by <RiArrowDropDownLine />
-      </div>
-    </div>
+    const filteredProducts = all_product.filter(item => item.category === props.category);
 
-    <div className="shopcategory-products">
-      {all_product && all_product.map((item,i)=>{
-        if(props.category===item.category){
-          
-          return <Items key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
-        }
-        else{
-          return null
-        }
-      })}
-    </div>
+    return (
+        <div>
+            <Navbar />
+           
 
-    <div className="shopcategory-loadmore">
-      Explore More
-    </div>
+            <div className='shop-category'>
+                <div className="shopcategory-indexSort">
+                    <p>
+                        <span> Showing 1-{filteredProducts.length} </span> out of {filteredProducts.length} products
+                    </p>
 
+                    <div className="shopcategory-sort">
+                        Sort by <RiArrowDropDownLine />
+                    </div>
+                </div>
 
-  </div>
-  )
+                <div className="shopcategory-products">
+                    {filteredProducts.map((item, i) => (
+                        <Items
+                            key={i}
+                            id={item.id}
+                            name={item.name}
+                            image={item.image}
+                            priceperday={item.priceperday}
+                        />
+                    ))}
+                </div>
+
+                <div className="shopcategory-loadmore">
+                    Explore More
+                </div>
+            </div>
+            <ListCategory />
+        </div>
+    );
 }
