@@ -1,7 +1,7 @@
 import React from 'react'
 
 import HeroBanner from '../Components/HeroBanner/HeroBanner'
-import Contact from '../Components/Contact/Contact'
+
 import { Newsletter } from '../Components/Newsletter/Newsletter'
 import Footer from '../Components/Footer/Footer'
 import { ListCategory } from '../Components/ListCategory/ListCategory'
@@ -15,7 +15,7 @@ export const Main = () => {
       <Navbar />
         <HeroBanner />
         <ListCategory/>
-        <Contact />
+      
         <Newsletter/>
         <Footer />
    
