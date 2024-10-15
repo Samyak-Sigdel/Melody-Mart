@@ -1,0 +1,138 @@
+/* Container for the entire carousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* Each slide in the carousel */
+.carousel-slide-container {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Offscreen initially */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Invisible when not active */
+  transition: left 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+  left: 0; /* Move into view */
+  opacity: 1; /* Become visible */
+}
+
+/* Content inside the slide (quote and button) */
+.carousel-content {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text visibility */
+  border-radius: 10px;
+}
+
+/* Styling for the promoted text */
+.promoted {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Styling for the quote text */
+.carousel-quote h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.carousel-quote .quote-author {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Styling for the button */
+.carousel-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots for slide navigation */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.active-dot {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}

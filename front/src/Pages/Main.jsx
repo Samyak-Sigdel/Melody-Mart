@@ -1,20 +1,23 @@
 import React from 'react'
 
-import HeroBanner from '../Components/HeroBanner/HeroBanner'
 
 import { Newsletter } from '../Components/Newsletter/Newsletter'
 import Footer from '../Components/Footer/Footer'
 import { ListCategory } from '../Components/ListCategory/ListCategory'
-import { Navbar } from '../Components/Navbar/Navbar'
+import { Loginregnav } from '../Components/Loginregnav/Loginregnav'
+import ImageCarousel from '../Components/ImageCarousel/ImageCarousel'
+
 
 
 
 export const Main = () => {
   return (
     <div>
-      <Navbar />
-        <HeroBanner />
+        <Loginregnav />
+        <ImageCarousel />
+      
         <ListCategory/>
+
       
         <Newsletter/>
         <Footer />
