@@ -26,6 +26,7 @@
   justify-content: center;
   opacity: 0; /* Invisible when not active */
   transition: left 1s ease-in-out, opacity 1s ease-in-out;
+
 }
 
 .carousel-slide.active {
@@ -38,8 +39,9 @@
   text-align: center;
   color: white;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text visibility */
+  /* background: rgba(0, 0, 0, 0.5); Semi-transparent background for better text visibility */
   border-radius: 10px;
+  width : 70%;
 }
 
 /* Styling for the promoted text */

@@ -6,6 +6,8 @@ import './Css/Subcategory.css';
 import { Shopcontext } from '../Context/Shopcontext'; 
 import { ListCategory } from '../Components/ListCategory/ListCategory';
 import { Navbar } from '../Components/Navbar/Navbar';
+import { Newsletter } from '../Components/Newsletter/Newsletter';
+import Footer from '../Components/Footer/Footer';
 
 export const Subcategory = (props) => {
     const { all_product } = useContext(Shopcontext);
@@ -22,6 +24,10 @@ export const Subcategory = (props) => {
            
 
             <div className='shop-category'>
+
+            <img className ='shopcategory-banner' src={props.banner} alt="" />
+
+            
                 <div className="shopcategory-indexSort">
                     <p>
                         <span> Showing 1-{filteredProducts.length} </span> out of {filteredProducts.length} products
@@ -49,6 +55,8 @@ export const Subcategory = (props) => {
                 </div>
             </div>
             <ListCategory />
+            <Newsletter />
+            <Footer />
         </div>
     );
 }

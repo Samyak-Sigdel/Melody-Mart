@@ -6,8 +6,10 @@ import { Register } from './Pages/Register';
 import { Main } from './Pages/Main';
 import { Category } from './Pages/Category';
 import { Subcategory } from './Pages/Subcategory';
-import { Product } from './Pages/Product'; // Add the Product page
+import { Product } from './Pages/Product'; 
 import { Contactus } from './Pages/Contactus';
+
+import guitarbanner from './Assets/gb.jpg';
 
 function App() {
   return (
@@ -18,12 +20,15 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/' element={<Main />} />
           <Route path='/category' element={<Category />} />
-          <Route path='/guitar' element={<Subcategory category="guitar" />} />
-          <Route path='/violin' element={<Subcategory category="violin" />} />
           <Route path='/product/:productId' element={<Product />} /> {/* Product route */}
 
           <Route path='/contactus' element={<Contactus />} />
 
+          <Route path='/guitar' element={<Subcategory banner ={guitarbanner} category="guitar" />} />
+          <Route path='/violin' element={<Subcategory category="violin" />} />
+          <Route path='/drums' element={<Subcategory category="drums" />} />
+          <Route path='/piano' element={<Subcategory category="piano" />} />
+          <Route path='/flute' element={<Subcategory category="flute" />} />
 
     
         </Routes>

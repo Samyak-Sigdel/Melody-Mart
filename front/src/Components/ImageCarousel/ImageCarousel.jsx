@@ -2,31 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './ImageCarousel.css';
 
+
+
 const images = [
   {
     src: 'https://www.musicology.blog/wp-content/uploads/2024/02/eric_clapton_signe_main-2.jpg',
     quote: 'There is no passion to be found playing small - in settling for a life that is less than the one you are capable of living.',
     author: 'Nelson Mandela',
     option: 'Follow Your Passion Today!',
-    path: '/guitar'
+    path: '/category'
   },
   {
-    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtSi983zmZQl8GMUW3fvfrz8J-rP889JFmaebRx41QMwwyBnaz_8cThzSE7rM3xR5x5EE&usqp=CAU',
+    src: 'https://i.ytimg.com/vi/ni9w01KpgCU/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEIgTChyMA8=&rs=AOn4CLBKZ7XaMGwDQo9XnQCkffZqs6s0mw',
     quote: 'At times, Clapton plays so hard that he breaks his guitar strings. Audiences then wait patiently and slow clap while he changes them – The origin of his nickname Slowhand.',
     option: 'Get your guitar',
     path: '/guitar'
   },
   {
-    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSDG3kbdzlKPvRj0Nd0_p9PBoGYOkUIIrssAafKbdGyi9O-llv75YUx1jkdD97xTMeDdY&usqp=CAU',
-    quote: 'A drum roll with just one stick is known as a ‘Gravity Roll’.',
+    src: 'https://i.pinimg.com/564x/ad/28/be/ad28be3dae0e7e3258e0f205402fb319.jpg',
+    quote: 'A drum roll with just one stick is known as a ‘Gravity Roll’ or a ‘Gravity Blast’. The drummer rests the stick on the rim & constantly pushes the back of the stick up and down to create a drum roll.’.',
     option: 'Try it out',
     path: '/drums'
   },
   {
-    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW8SOjf6fJMTKoh9wM9aoUMsV6XGPXdlmkIXMCHyHd_ODZCvrjXVrYPVKeCFzhlZeubps&usqp=CAU',
-    quote: 'Believe in yourself.',
+    src: 'https://i.ebayimg.com/images/g/qpEAAOSw~EJi0hmf/s-l1600.webp',
+    quote: 'Einstein once said, “Life without playing music is inconceivable to me. I live my daydreams in music. I see my life in terms of music... I get most joy in life out of music”. And as it turned out, Einstein was right.',
     option: 'Start today',
-    path: '/guitar'
+    path: '/violin'
   }
 ];
 
@@ -38,7 +40,7 @@ const ImageCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // 5 seconds per image
+    }, 3000); // 5 seconds per image
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);

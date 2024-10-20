@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsSpeakerFill } from "react-icons/bs";
-import { Link } from 'react-router-dom'; // Assuming you're using react-router for navigation
+import { Link } from 'react-router-dom';
 
 export const Loginregnav = () => {
   return (

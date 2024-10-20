@@ -16,12 +16,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 .ins {
     background-color: #fff;
-    padding: 7px;
+    padding: 10px;
     height: 310px; /* Increased height for better spacing */
     width: 260px;  /* Adjusted width for a more balanced look */
     box-sizing: border-box;
@@ -51,12 +51,14 @@
     height: 200px;
     width: 100%;
     margin: 10px 0;
+    padding: 5px;
 }
 
 .image img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 2px;
 }
 
 .cat-des {
@@ -70,6 +72,7 @@
     transition: color 0.3s;
     padding-top: 7px;
     padding-bottom: 7px;
+    border-radius: 3px;
 }
 
 .cat-des:hover {
