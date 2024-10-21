@@ -4,10 +4,11 @@ import { Items } from '../Components/Items/Items';
 import './Css/Subcategory.css';
 
 import { Shopcontext } from '../Context/Shopcontext'; 
-import { ListCategory } from '../Components/ListCategory/ListCategory';
-import { Navbar } from '../Components/Navbar/Navbar';
-import { Newsletter } from '../Components/Newsletter/Newsletter';
+
 import Footer from '../Components/Footer/Footer';
+import { Loginregnav } from '../Components/Loginregnav/Loginregnav';
+import BrandSlider from '../Components/BrandSlider/BrandSlider';
+import { ListCategory } from '../Components/ListCategory/ListCategory';
 
 export const Subcategory = (props) => {
     const { all_product } = useContext(Shopcontext);
@@ -20,7 +21,7 @@ export const Subcategory = (props) => {
 
     return (
         <div>
-            <Navbar />
+           <Loginregnav />
            
 
             <div className='shop-category'>
@@ -55,7 +56,7 @@ export const Subcategory = (props) => {
                 </div>
             </div>
             <ListCategory />
-            <Newsletter />
+            <BrandSlider />
             <Footer />
         </div>
     );

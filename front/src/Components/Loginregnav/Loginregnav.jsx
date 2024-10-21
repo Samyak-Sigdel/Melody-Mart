@@ -16,7 +16,7 @@ export const Loginregnav = () => {
           <div className="flex space-x-6 text-white">
             <Link to="/" className="hover:text-gray-400">Home</Link>
             <Link to="/category" className="hover:text-gray-400">Category</Link>
-            <Link to="/contact" className="hover:text-gray-400">Contact</Link>
+            <Link to="/contactus" className="hover:text-gray-400">Contact</Link>
           </div>
         </div>
       </div>

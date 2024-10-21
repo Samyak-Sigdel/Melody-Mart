@@ -1,5 +1,5 @@
 import './App.css';
-import { Navbar } from './Components/Navbar/Navbar';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Login } from './Pages/Login';
 import { Register } from './Pages/Register';
@@ -9,7 +9,8 @@ import { Subcategory } from './Pages/Subcategory';
 import { Product } from './Pages/Product'; 
 import { Contactus } from './Pages/Contactus';
 
-import guitarbanner from './Assets/gb.jpg';
+import guitarbanner from './Assets/guitarbanner.jpg';
+import pianobanner from './Assets/pianob.jpg';
 
 function App() {
   return (
@@ -25,9 +26,9 @@ function App() {
           <Route path='/contactus' element={<Contactus />} />
 
           <Route path='/guitar' element={<Subcategory banner ={guitarbanner} category="guitar" />} />
-          <Route path='/violin' element={<Subcategory category="violin" />} />
+          <Route path='/violin' element={<Subcategory  category="violin" />} />
           <Route path='/drums' element={<Subcategory category="drums" />} />
-          <Route path='/piano' element={<Subcategory category="piano" />} />
+          <Route path='/piano' element={<Subcategory banner = {pianobanner} category="piano" />} />
           <Route path='/flute' element={<Subcategory category="flute" />} />
 
     

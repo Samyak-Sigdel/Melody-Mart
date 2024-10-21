@@ -11,18 +11,20 @@ import BrandSlider from '../Components/BrandSlider/BrandSlider'
 
 
 
+
 export const Main = () => {
   return (
     <div>
         <Loginregnav />
         <ImageCarousel />
+
       
         <ListCategory/>
 
+        <Newsletter/>
         <BrandSlider/>
 
       
-        <Newsletter/>
         <Footer />
    
 

@@ -72,7 +72,7 @@ export const all_product = [
     {
         id: 9,
         name: "Gibson Acoustic guitar",
-        category: "guitar",
+        category: "drums",
         image: p9,
         priceperday: 30,
     },
