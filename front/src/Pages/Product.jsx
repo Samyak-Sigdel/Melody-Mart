@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Shopcontext } from '../Context/Shopcontext';
 import ProductDisplay from '../Components/ProductDisplay/ProductDisplay';
-import { Navbar } from '../Components/Navbar/Navbar';
+
+import { Loginregnav } from '../Components/Loginregnav/Loginregnav';
 
 
 
@@ -12,7 +13,7 @@ export const Product = () => {
   const product=all_product.find((e)=> e.id === Number(productId));
   return (
     <div>
-      <Navbar />
+      <Loginregnav />
       <ProductDisplay product={product}/>
 
     </div>

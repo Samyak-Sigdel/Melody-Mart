@@ -10,7 +10,11 @@ import { Product } from './Pages/Product';
 import { Contactus } from './Pages/Contactus';
 
 import guitarbanner from './Assets/guitarbanner.jpg';
-import pianobanner from './Assets/pianob.jpg';
+
+import ppp from './Assets/ppp.jpg';
+import drum from './Assets/drumsb.jpg'
+
+
 
 function App() {
   return (
@@ -27,8 +31,8 @@ function App() {
 
           <Route path='/guitar' element={<Subcategory banner ={guitarbanner} category="guitar" />} />
           <Route path='/violin' element={<Subcategory  category="violin" />} />
-          <Route path='/drums' element={<Subcategory category="drums" />} />
-          <Route path='/piano' element={<Subcategory banner = {pianobanner} category="piano" />} />
+          <Route path='/drums' element={<Subcategory banner = {drum} category="drums" />} />
+          <Route path='/piano' element={<Subcategory banner = {ppp} category="piano" />} />
           <Route path='/flute' element={<Subcategory category="flute" />} />
 
     
