@@ -53,9 +53,10 @@ const ProductDisplay = ({ product }) => {
         <option value="monthly">Monthly - ₹{product.monthly}</option>
       </select>
 
+      <div className="price">
       {/* Display total price */}
       <p>Total Price: ₹{getPrice()}</p>
-
+      </div>
       {/* Add to Cart Button */}
       <button className="add-to-cart" disabled={!selectedOption}>Add to Cart</button>
     </div>
