@@ -17,6 +17,7 @@ export const Product = () => {
       <Loginregnav />
       <ProductDisplay product={product}/>
 
+
       <BrandSlider />
       
       <Footer />

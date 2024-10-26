@@ -31,12 +31,15 @@ const ProductDisplay = ({ product }) => {
 
   return (
     <div className="product-container">
+
+      <div className="sectionone">
       <img src={product.image} alt={product.name} className="product-image" />
+      </div>
       <h1>{product.name}</h1>
       <p>Category: {product.category}</p>
 
 
-
+    <div className="sectiontwo">
 
       {/* Quantity Selector */}
       <div className="quantity-selector">
@@ -44,7 +47,6 @@ const ProductDisplay = ({ product }) => {
         <span>{quantity}</span>
         <button onClick={increaseQuantity}>+</button>
       </div>
-
       {/* Option Dropdown */}
       <select value={selectedOption} onChange={handleOptionChange} className="option-dropdown">
         <option value="" disabled>Choose an option</option>
@@ -52,13 +54,18 @@ const ProductDisplay = ({ product }) => {
         <option value="halfMonth">Half Month - ₹{product.half_month}</option>
         <option value="monthly">Monthly - ₹{product.monthly}</option>
       </select>
-
-      <div className="price">
-      {/* Display total price */}
-      <p>Total Price: ₹{getPrice()}</p>
-      </div>
+    
       {/* Add to Cart Button */}
       <button className="add-to-cart" disabled={!selectedOption}>Add to Cart</button>
+      </div>
+
+      <div className="price">
+    
+      <p>Total Price: ₹{getPrice()}</p>
+      </div>
+
+
+
     </div>
   );
 };
