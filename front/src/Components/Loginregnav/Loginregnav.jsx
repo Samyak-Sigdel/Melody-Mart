@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export const Loginregnav = () => {
   return (
     <div>
-      <div className="bg-black p-4">
+      <div className="bg-black p-6">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto">
           <a className="flex items-center space-x-3 text-4xl text-white">
             <BsSpeakerFill />
@@ -14,9 +14,11 @@ export const Loginregnav = () => {
             </span>
           </a>
           <div className="flex space-x-6 text-white">
-            <Link to="/" className="hover:text-gray-400">Home</Link>
-            <Link to="/category" className="hover:text-gray-400">Category</Link>
-            <Link to="/contactus" className="hover:text-gray-400">Contact</Link>
+            <Link to="/" className="hover:text-gray-400 text-xl">Home</Link>
+            <Link to="/category" className="hover:text-gray-400 text-xl">Category</Link>
+            <Link to="/contactus" className="hover:text-gray-400 text-xl">Contact</Link>
+            <Link to="/cart" className="hover:text-gray-400 text-xl">Cart</Link>
+
           </div>
         </div>
       </div>

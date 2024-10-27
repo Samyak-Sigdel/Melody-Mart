@@ -8,7 +8,7 @@ const images = [
   {
     src: 'https://www.musicology.blog/wp-content/uploads/2024/02/eric_clapton_signe_main-2.jpg',
     quote: 'There is no passion to be found playing small - in settling for a life that is less than the one you are capable of living.',
-    author: 'Nelson Mandela',
+  
     option: 'Follow Your Passion Today!',
     path: '/category'
   },

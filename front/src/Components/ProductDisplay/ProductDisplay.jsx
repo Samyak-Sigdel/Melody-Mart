@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ProductDisplay.css'
+import { useNavigate } from 'react-router-dom';
 
 const ProductDisplay = ({ product }) => {
   const [quantity, setQuantity] = useState(1); // Default quantity is 1
@@ -13,12 +14,20 @@ const ProductDisplay = ({ product }) => {
     return 0;
   };
 
-  // Handle changes in the dropdown
+
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+      if (selectedOption) {
+          navigate('/cart');
+      }
+  };
+
+
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
   };
 
-  // Handle changes in quantity
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
   };
@@ -41,13 +50,13 @@ const ProductDisplay = ({ product }) => {
 
     <div className="sectiontwo">
 
-      {/* Quantity Selector */}
+
       <div className="quantity-selector">
         <button onClick={decreaseQuantity}>-</button>
         <span>{quantity}</span>
         <button onClick={increaseQuantity}>+</button>
       </div>
-      {/* Option Dropdown */}
+  
       <select value={selectedOption} onChange={handleOptionChange} className="option-dropdown">
         <option value="" disabled>Choose an option</option>
         <option value="weekly">Weekly - ₹{product.weekly}</option>
@@ -55,16 +64,13 @@ const ProductDisplay = ({ product }) => {
         <option value="monthly">Monthly - ₹{product.monthly}</option>
       </select>
     
-      {/* Add to Cart Button */}
-      <button className="add-to-cart" disabled={!selectedOption}>Add to Cart</button>
+
+      <button className="add-to-cart" disabled={!selectedOption}  onClick={handleAddToCart}>Add to Cart</button>
       </div>
 
       <div className="price">
-    
       <p>Total Price: ₹{getPrice()}</p>
       </div>
-
-
 
     </div>
   );

@@ -13,6 +13,7 @@ import guitarbanner from './Assets/guitarbanner.jpg';
 
 import ppp from './Assets/ppp.jpg';
 import drum from './Assets/drumsb.jpg'
+import { Cart } from './Pages/Cart';
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/product/:productId' element={<Product />} /> {/* Product route */}
 
           <Route path='/contactus' element={<Contactus />} />
+          <Route path='/cart' element={<Cart />} />
 
           <Route path='/guitar' element={<Subcategory banner ={guitarbanner} category="guitar" />} />
           <Route path='/violin' element={<Subcategory  category="violin" />} />

@@ -7,6 +7,7 @@ import { Loginregnav } from '../Components/Loginregnav/Loginregnav';
 import BrandSlider from '../Components/BrandSlider/BrandSlider';
 
 import Footer from '../Components/Footer/Footer'
+import { ListCategory } from '../Components/ListCategory/ListCategory';
 
 export const Product = () => {
   const {all_product}=useContext(Shopcontext)
@@ -16,6 +17,9 @@ export const Product = () => {
     <div>
       <Loginregnav />
       <ProductDisplay product={product}/>
+
+
+      <ListCategory />
 
 
       <BrandSlider />
