@@ -7,32 +7,32 @@ export const Instruments = () => {
     {
       name: 'Guitar',
       img: 'https://content.instructables.com/FN4/QHK2/JGMJCWPY/FN4QHK2JGMJCWPY.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=64e8c8fa0fb67334cc0b45f3409f0d11',
-      description: 'The guitar is a versatile stringed instrument that has played a central role in various music genres, from classical and jazz to rock and pop. It typically features six strings, though variations exist with different numbers of strings.'
+      description: 'Explore a variety of guitar collections, from classic and jazz styles to rock and pop, featuring both six-string and multi-string variations to suit every genre and player.'
     },
     {
       name: 'Piano',
       img: "https://i.pinimg.com/564x/f5/32/27/f53227feb202591ffa42b327f9414810.jpg",
-      description: 'The piano is a large keyboard musical instrument with a wooden case enclosing a soundboard and metal strings, which are struck by hammers when the keys are pressed.'
+      description: 'Discover a wide range of piano collections, from grand and upright pianos to digital models, suited for classical, jazz, pop, and beyond—perfect for musicians of all levels and styles.'
     },
     {
       name: 'Violin',
       img: 'https://i.pinimg.com/564x/8b/24/03/8b24038ff83ff27aa7dd2e2e5281b3d5.jpg',
-      description: 'The violin is a string instrument which has four strings and is played with a bow. It is the smallest and highest-pitched instrument in the violin family of string instruments.'
+      description: 'Explore diverse violin collections, from classic acoustic models to electric variations, ideal for genres like classical, folk, jazz, and more—crafted to suit musicians at every skill level.'
     },
     {
       name: 'Drums',
       img: 'https://www.superprof.com.au/blog/wp-content/uploads/2018/06/drums.jpg',
-      description: 'Drums are percussion instruments and are the oldest form of instruments, existing in a wide variety of shapes and sizes and producing sounds through vibrations created when struck.'
+      description: 'Browse an extensive selection of drum sets, from acoustic kits to electronic options, perfect for genres like rock, jazz, pop, and more—designed for drummers of all experience levels.'
     },
     {
       name: 'Electric Guitar',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgoBsPj6e8Bm--cpgvzDl5M3D2p9A_yluk7A&s',
-      description: 'The electric guitar is a guitar that uses one or more pickups to convert the vibration of its strings into electrical signals, which ultimately are reproduced as sound by loudspeakers.'
+      description: 'Discover a range of electric guitars, from classic models to modern designs, tailored for genres like rock, blues, jazz, and beyond—crafted to bring powerful sound and versatility to every player.'
     },
-    {
+      {
       name: 'Flute',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUhHzP3ebPra6cQ7nIBQISSz4js9IRamFKng&s',
-      description: 'The flute is a family of musical instruments in the woodwind group. Unlike woodwind instruments with reeds, a flute is an aerophone or reedless wind instrument that produces its sound from the flow of air across an opening.'
+      description: 'Explore an array of flutes, from traditional wooden to modern silver designs, ideal for classical, jazz, folk, and more—perfectly suited for players at all skill levels.'
     }
   ];
 
