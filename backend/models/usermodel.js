@@ -7,3 +7,7 @@ const userSchema = new  mongoose.Schema({
     date:{type:Date,default:Date.now},
     
 })
+
+const userModel = mongoose.model("product",userSchema);
+
+export default userModel;
