@@ -3,7 +3,8 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
-import adminRoute from './routes/adminroute.js'
+import adminRoute from './routes/adminRoute.js'
+import userRoute from './routes/userRoute.js'
 
 
 //app config 
@@ -20,6 +21,11 @@ app.use(cors())
 
 //api endpoint 
 app.use('/api/admin',adminRoute)
+
+
+
+
+app.use('/api/user',userRoute)
 
 //localhost:4000/api/admin
 
