@@ -29,3 +29,28 @@ const addProduct = async (req, res) => {
         res.status(500).send({ error: 'Failed to add product' });
     }
 };
+
+    const removeproduct = async (res,req)  =>({
+        
+
+
+
+
+    })
+
+    const allproduct = async (req, res) => {
+        try {
+            // Add your database fetching logic here
+            const products = await productModel.find(); // Assuming `productModel` is your Mongoose model
+    
+            res.status(200).send(products);
+        } catch (error) {
+            console.error("Error fetching products:", error);
+            res.status(500).send({ error: 'Failed to fetch products' });
+        }
+    };
+    
+
+
+
+export { addProduct,allproduct };

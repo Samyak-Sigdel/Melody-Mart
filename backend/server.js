@@ -3,9 +3,9 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
-import adminRoute from './routes/adminRoute.js'
-import userRoute from './routes/userRoute.js'
 
+import userRoute from './routes/userRoute.js'
+import adminRoute from './routes/adminRoute.js'
 
 //app config 
 

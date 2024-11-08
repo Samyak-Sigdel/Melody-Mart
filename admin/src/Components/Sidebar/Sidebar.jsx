@@ -14,7 +14,7 @@ export const Sidebar = () => {
     
     <div className='sidebar'>
 
-      <Link to= {'/addproduct'} style={{textDecoration:"none"}} >
+      <Link to= {'/api/admin/addproduct'} style={{textDecoration:"none"}} >
         <div className="sidebar_item">
             <img src={add_product_icon} alt="" />
             <p>Add product</p>

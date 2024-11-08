@@ -12,7 +12,7 @@ export const Admin = () => {
     <div className='admin'>
         <Sidebar/>
         <Routes>
-            <Route path ='/addproduct' element={<Addproducts/>}/>
+            <Route path ='/api/admin/addproduct' element={<Addproducts/>}/>
             <Route path ='/listproduct' element={<ListProduct/>}/>
         </Routes>       
     </div>
