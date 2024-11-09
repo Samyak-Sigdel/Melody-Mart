@@ -1,12 +1,12 @@
 import express from 'express';
 import { addProduct } from '../controllers/adminController.js';
 import { usersignup } from '../controllers/userController.js';
-// import upload from '../middleware/multer.js';
+import upload from '../middleware/multer.js'; // Uncommented the multer import
 
 const adminRoute = express.Router();
 
-// Use `adminRoute` instead of `router`
-adminRoute.post('/addProduct', addProduct);
+// Use `upload.single('imageFile')` to handle single file upload in the `/addProduct` route
+adminRoute.post('/addProduct', upload.single('imageFile'), addProduct);
 adminRoute.post('/signup', usersignup);
 
 export default adminRoute;

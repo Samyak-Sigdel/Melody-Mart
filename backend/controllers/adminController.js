@@ -1,34 +1,50 @@
+import { v2 as cloudinary} from "cloudinary"; 
+import productModel from "../models/productmodel.js";
+
+
+
+
 const addProduct = async (req, res) => {
     try {
         const { name, id, category, priceOptions, description } = req.body;
         const imageFile = req.file;
 
-        // Check for missing fields
-        if (!name || !id || !imageFile || !category || !priceOptions || !description) {
-            return res.status(400).send({ error: 'Please provide all required fields' });
+
+  
+        if (!name || !id  || !category || !description || !priceOptions) {
+            return res.json({success:false,message:"Missing Details"})
         }
 
-        // Process image path if file exists
-        const image = `/uploads/${imageFile.filename}`;
+        const imageUpload = await cloudinary.uploader.upload(imageFile.path,{resource_type:"image"})
+        const imageUrl = imageUpload.secure_url
+
+        
+      
 
         const productData = {
             name,
             id,
-            image,
+            image:imageUrl,
             category,
-            priceOptions,
+            priceOptions:JSON.parse(priceOptions),
             description,
+            date:Date.now()
         };
+
+
 
         const newProduct = new productModel(productData);
         const product = await newProduct.save();
 
-        res.status(201).send({ message: 'Product added successfully', product });
+        res.json({ success:true,message: 'Product added successfully',product});
+
+
     } catch (error) {
-        console.error("Error adding product:", error);
-        res.status(500).send({ error: 'Failed to add product' });
+        console.log( error);
+        res.json({ success:false,message:error.message });
     }
 };
+
 
     const removeproduct = async (res,req)  =>({
         
