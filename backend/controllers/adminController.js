@@ -1,5 +1,5 @@
 import { v2 as cloudinary} from "cloudinary"; 
-import productModel from "../models/productmodel.js";
+import productmodel from "../models/productmodel.js";
 
 
 
@@ -33,7 +33,7 @@ const addProduct = async (req, res) => {
 
 
 
-        const newProduct = new productModel(productData);
+        const newProduct = new productmodel(productData);
         const product = await newProduct.save();
 
         res.json({ success:true,message: 'Product added successfully',product});
@@ -54,15 +54,17 @@ const addProduct = async (req, res) => {
 
     })
 
+
+
+
     const allproduct = async (req, res) => {
         try {
             // Add your database fetching logic here
-            const products = await productModel.find(); // Assuming `productModel` is your Mongoose model
-    
-            res.status(200).send(products);
+            const products = await productmodel.find({}); // Assuming `productModel` is your Mongoose model
+            res.json({success:true,products})
         } catch (error) {
-            console.error("Error fetching products:", error);
-            res.status(500).send({ error: 'Failed to fetch products' });
+            console.log( error);
+            res.json({ success:false,message:error.message });
         }
     };
     
