@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';  // Import the CSS file
+import image from '../../Assets/con.jpg'; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,17 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
+
+      <div className="imagepart">
+
+        <img src={image} alt="" />
+
+
+
+      </div>
+
+
+
       <div className="contact-form">
         <h2>Send us a Message</h2>
         <form onSubmit={handleSubmit}>

@@ -45,8 +45,8 @@ const removeProduct = async (id) => {
 
     await fetchInfo();
   } catch (error) {
-    console.error("Error removing product:", error);
-    setError("Could not remove product. Please try again.");
+    console.error( error);
+    
   }
 };
 
