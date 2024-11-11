@@ -46,17 +46,6 @@ const addProduct = async (req, res) => {
 };
 
 
-    const removeproduct = async (res,req)  =>({
-        
-
-
-
-
-    })
-
-
-
-
     const allproduct = async (req, res) => {
         try {
             // Add your database fetching logic here
@@ -67,8 +56,31 @@ const addProduct = async (req, res) => {
             res.json({ success:false,message:error.message });
         }
     };
+
+
+    const removeproduct = async (req, res) => {
+        try {
+            
+            const deletedProduct = await productmodel.findOneAndDelete({id:req.body.id});
+    
+            if (!deletedProduct) {
+                return res.status(404).json({ success: false, message: 'Product not found' });
+            }
+    
+            res.json({ success: true, message: 'Product removed successfully', product: deletedProduct });
+        } catch (error) {
+            console.log( error);
+            res.json({ success:false,message:error.message });
+        }
+    };
+
+
+
+
+
+
     
 
 
 
-export { addProduct,allproduct };
+export { addProduct,allproduct,removeproduct };

@@ -14,7 +14,7 @@
     font-size: 16px;
 }
 
-.addproduct-itemfield input{
+.addproduct-itemfield input,textarea{
     box-sizing: border-box;
     width: 100%;
     height: 50px;
@@ -64,3 +64,21 @@
     font-weight: 500;
 }
 
+.duration{
+    padding-top: 30px;
+    margin-top: 20px;
+    display: flex;
+    padding: 5px;
+}
+
+.duration input{
+    width: 120px;
+}
+
+.duration p{
+    padding: 5px;
+}
+
+.priceoption{
+    margin-top: 15px;
+}
