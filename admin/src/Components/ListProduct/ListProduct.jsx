@@ -25,31 +25,32 @@ export const ListProduct = () => {
   }, []);
 
 
+
+  const removeProduct = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this product?")) return;
   
-// Function to remove a product by its unique id
-const removeProduct = async (id) => {
-  try {
-    const res = await fetch('http://localhost:4000/api/admin/removeproduct', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ id })  // Send "id" as the key
-    });
-
-    if (!res.ok) throw new Error("Failed to remove product");
-
-    const result = await res.json();
-    console.log("Product removed:", result);
-
-    await fetchInfo();
-  } catch (error) {
-    console.error( error);
-    
-  }
-};
-
+    try {
+      const res = await fetch('http://localhost:4000/api/admin/removeproduct', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id })  // Ensure this matches the backend expectation
+      });
+  
+      if (!res.ok) throw new Error("Failed to remove product");
+  
+      const result = await res.json();
+      console.log("Product removed:", result);
+  
+      // Refetch or update the UI
+      await fetchInfo();
+    } catch (error) {
+      console.error("Error removing product:", error);
+      fetchInfo(); // Refresh the list if there’s an error
+    }
+  };
   
 
   return (
@@ -86,7 +87,7 @@ const removeProduct = async (id) => {
                   ${product.priceOptions.find(option => option.duration === "Half-monthly")?.price || 'N/A'}
                 </p>
                 <p>
-                  ${product.priceOptions.find(option => option.duration === "monthly")?.price || 'N/A'}
+                  ${product.priceOptions.find(option => option.duration === "Monthly")?.price || 'N/A'}
                 </p>
 
                 <p>{product.category}</p>

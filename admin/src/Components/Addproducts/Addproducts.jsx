@@ -1,112 +1,99 @@
+// components/Addproducts.js
+
 import React, { useState } from 'react';
 import './Addproduct.css';
 import upload_area from '../../assets/upload.jpg';
 
 export const Addproducts = () => {
-  const [image, setImage] = useState(null);
-  const [productDetails, setProductDetails] = useState({
-    id: '', // Initialize id field
+  const [formData, setFormData] = useState({
     name: '',
-    category: '',
+    category: 'guitar',
+    priceOptions: { Weekly: '', HalfMonthly: '', Monthly: '' },
+    imageFile: null,
     description: '',
-    priceOptions: {
-      Weekly: '',
-      HalfMonthly: '',
-      Monthly: ''
-    }
   });
 
-  // Handle text input changes for name, id, category, and description
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProductDetails((prevDetails) => ({
-      ...prevDetails,
-      [name]: value
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
     }));
   };
 
-  // Handle changes for price options (Weekly, HalfMonthly, Monthly)
   const handlePriceChange = (e) => {
     const { name, value } = e.target;
-    setProductDetails((prevDetails) => ({
-      ...prevDetails,
-      priceOptions: {
-        ...prevDetails.priceOptions,
-        [name]: value
-      }
+    setFormData((prev) => ({
+      ...prev,
+      priceOptions: { ...prev.priceOptions, [name]: value },
     }));
   };
 
-  // Handle image file change
-  const handleImageChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      setImage(e.target.files[0]);
-    }
+  const handleFileChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      image: e.target.files[0],
+    }));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    const formData = new FormData();
-    formData.append('id', productDetails.id || '');
-    formData.append('name', productDetails.name || '');
-    formData.append('category', productDetails.category || '');
-    formData.append('description', productDetails.description || '');
-  
-    if (image) {
-      formData.append('imageFile', image);
-    }
-  
-    const priceOptions = [
-      { duration: 'Weekly', price: productDetails.priceOptions.Weekly || '' },
-      { duration: 'Half-monthly', price: productDetails.priceOptions.HalfMonthly || '' },
-      { duration: 'monthly', price: productDetails.priceOptions.Monthly || '' }
-    ];
-  
-    formData.append('priceOptions', JSON.stringify(priceOptions));
-  
-    console.log('Form Data:', formData);
-  
+    const { name, category, priceOptions, image, description } = formData;
+
+    // Prepare the form data to send to the backend
+    const productData = new FormData();
+    productData.append('name', name);
+    productData.append('category', category);
+    productData.append('description', description);
+    productData.append('imageFile', image);
+
+
+    
+ 
+
+    // Append each price option
+    productData.append(
+      'priceOptions',
+      JSON.stringify([
+        { duration: 'Weekly', price: priceOptions.Weekly },
+        { duration: 'Half-monthly', price: priceOptions.HalfMonthly },
+        { duration: 'Monthly', price: priceOptions.Monthly },
+      ])
+    );
+
     try {
       const response = await fetch('http://localhost:4000/api/admin/addProduct', {
         method: 'POST',
-        body: formData,
+        body: productData,
       });
-  
       const result = await response.json();
       if (response.ok) {
-        console.log('Product added successfully:', result);
-        alert("Product added");
+        alert('Product added successfully!');
+        // Clear form data if necessary
+        setFormData({
+          name: '',
+          category: 'guitar',
+          priceOptions: { Weekly: '', HalfMonthly: '', Monthly: '' },
+          image: null,
+          description: '',
+        });
       } else {
-        console.error('Error adding product:', result);
-        alert("Product not added");
+        console.error(result.message);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error adding product:', error);
     }
   };
-  
 
   return (
     <div className="add-product">
       <form onSubmit={handleSubmit}>
         <div className="addproduct-itemfield">
-          <p>Product title</p>
+          <p>Product Title</p>
           <input
             type="text"
             name="name"
-            value={productDetails.name}
-            onChange={handleInputChange}
-            placeholder="Type here"
-            required
-          />
-        </div>
-
-        <div className="addproduct-itemfield">
-          <p>ID</p>
-          <input
-            type="text"
-            name="id" // Corrected to match productDetails property
-            value={productDetails.id}
+            value={formData.name}
             onChange={handleInputChange}
             placeholder="Type here"
             required
@@ -117,7 +104,7 @@ export const Addproducts = () => {
           <p>Instrument Category</p>
           <select
             name="category"
-            value={productDetails.category}
+            value={formData.category}
             onChange={handleInputChange}
             className="add-product-selector"
           >
@@ -128,7 +115,6 @@ export const Addproducts = () => {
             <option value="electricguitar">Electric Guitar</option>
             <option value="flute">Flute</option>
           </select>
-          required
         </div>
 
         <div className="addproduct-itemfield">
@@ -139,7 +125,7 @@ export const Addproducts = () => {
               <input
                 type="number"
                 name="Weekly"
-                value={productDetails.priceOptions.Weekly}
+                value={formData.priceOptions.Weekly}
                 onChange={handlePriceChange}
                 placeholder="Type here"
                 required
@@ -148,7 +134,7 @@ export const Addproducts = () => {
               <input
                 type="number"
                 name="HalfMonthly"
-                value={productDetails.priceOptions.HalfMonthly}
+                value={formData.priceOptions.HalfMonthly}
                 onChange={handlePriceChange}
                 placeholder="Type here"
                 required
@@ -157,7 +143,7 @@ export const Addproducts = () => {
               <input
                 type="number"
                 name="Monthly"
-                value={productDetails.priceOptions.Monthly}
+                value={formData.priceOptions.Monthly}
                 onChange={handlePriceChange}
                 placeholder="Type here"
                 required
@@ -169,13 +155,13 @@ export const Addproducts = () => {
         <div className="addproduct-itemfield">
           <label htmlFor="file-input">
             <img
-              src={image ? URL.createObjectURL(image) : upload_area}
+              src={formData.image ? URL.createObjectURL(formData.image) : upload_area}
               className="addproduct-thumbnail-img"
               alt="Thumbnail"
             />
           </label>
           <input
-            onChange={handleImageChange}
+            onChange={handleFileChange}
             type="file"
             name="image"
             id="file-input"
@@ -187,7 +173,7 @@ export const Addproducts = () => {
           <p>Description</p>
           <textarea
             name="description"
-            value={productDetails.description}
+            value={formData.description}
             onChange={handleInputChange}
             placeholder="Type here"
             rows="5"

@@ -5,7 +5,7 @@ import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
 
 import userRoute from './routes/userRoute.js'
-import adminRoute from './routes/adminroute.js'
+import adminRoute from './routes/adminRoute.js'
 
 
 //app config 
