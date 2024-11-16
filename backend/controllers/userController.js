@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 
 const usersignup = async (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, phone } = req.body;
 
         // Check required fields
         if (!username || !password || !email) {

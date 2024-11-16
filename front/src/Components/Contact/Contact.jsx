@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';  // Import the CSS file
-import image from '../../Assets/con.jpg'; 
+import contactbg from '../../Assets/contactbg.jpg'; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +27,7 @@ const Contact = () => {
 
       <div className="imagepart">
 
-        <img src={image} alt="" />
+        <img src={contactbg} alt="" />
 
 
 
