@@ -6,6 +6,7 @@ import connectCloudinary from './config/cloudinary.js'
 
 import userRoute from './routes/userRoute.js'
 import adminRoute from './routes/adminRoute.js'
+import cartRoute from './routes/cartRoute.js'
 
 
 //app config 
@@ -22,11 +23,8 @@ app.use(cors())
 
 //api endpoint 
 app.use('/api/admin',adminRoute)
-
-
-
-
 app.use('/api/user',userRoute)
+app.use('/api/cart',cartRoute)
 
 //localhost:4000/api/admin
 
