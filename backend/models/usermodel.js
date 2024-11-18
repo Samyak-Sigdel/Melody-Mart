@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   cart: [cartItemSchema], // Array of cart items
-  data :{type:Date,default:Date.now,}
+  date :{type:Date,default:Date.now,}
 });
 
 const userModel = mongoose.models.user || mongoose.model("User", userSchema);
