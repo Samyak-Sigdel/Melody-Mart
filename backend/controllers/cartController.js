@@ -1,24 +1,65 @@
 import productmodel from "../models/productmodel.js";
 import usermodel from "../models/usermodel.js";
+
 const addtocart = async (req, res) => {
     try {
-        req.user = { id: "mockUserId" }; // Mock user for testing
-        const { itemId, duration } = req.body;
+       
+        const userId = req.user.id; // From fetchUser middleware
+        const { productId, selectedPriceOption, quantity } = req.body;
 
-        if (!itemId || !duration) {
-            throw new Error("Product ID and duration are required");
+        // Validate request body
+        if (!productId || !selectedPriceOption || !selectedPriceOption.duration || !selectedPriceOption.price || !quantity) {
+            return res.status(400).json({ success: false, message: "All fields are required: productId, selectedPriceOption, and quantity." });
         }
 
-        // Your existing logic here...
+        // Check if the product exists
+        const product = await productmodel.findById(productId);
+        if (!product) {
+            return res.status(404).json({ success: false, message: "Product not found." });
+        }
 
-        res.status(200).json({ success: true, message: "Item added to cart" });
+        // Validate selectedPriceOption
+        const validPriceOption = product.priceOptions.find(
+            (option) =>
+                option.duration === selectedPriceOption.duration && option.price === selectedPriceOption.price
+        );
+
+        if (!validPriceOption) {
+            return res.status(400).json({ success: false, message: "Invalid price option selected." });
+        }
+
+        console.log("User ID from Token:", userId); // Debugging log
+
+        // Find the user
+        const user = await usermodel.findById(userId);
+        if (!user) {
+            console.error(`User not found: ${userId}`); // More detailed error
+            return res.status(404).json({ success: false, message: `User not found with ID ${userId}.` });
+        }
+        // Check if the product already exists in the cart
+        const cartItemIndex = user.cart.findIndex((item) => item.product.toString() === productId);
+
+        if (cartItemIndex > -1) {
+            // Update existing cart item
+            user.cart[cartItemIndex].quantity += quantity;
+            user.cart[cartItemIndex].selectedPriceOption = selectedPriceOption;
+        } else {
+            // Add new cart item
+            user.cart.push({
+                product: productId,
+                selectedPriceOption,
+                quantity,
+            });
+        }
+
+        // Save updated user cart
+        await user.save();
+
+        res.status(200).json({ success: true, message: "Product added to cart successfully.", cart: user.cart });
     } catch (error) {
         console.error("Error in addtocart:", error.message);
-        res.status(400).json({ success: false, message: error.message });
+        res.status(500).json({ success: false, message: "Server error." });
     }
 };
-
-
-
 
 export { addtocart };
