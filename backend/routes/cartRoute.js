@@ -1,15 +1,15 @@
 import express from "express"
-import authenticate from "../middleware/authenticate.js";
+
 import fetchUser from "../middleware/fetchuser.js";
 
-import { addtocart } from "../controllers/cartController.js";
+import { addtocart, removefromcart } from "../controllers/cartController.js";
 
 
 
 const cartRoute = express.Router();
 
 cartRoute.post('/addtocart',fetchUser,addtocart);
+cartRoute.post('/removefromcart',removefromcart);
 // cartRoute.get('/getcart',getcart);
-// cartRoute.post('/removefromcart',removefromcart);
 
 export default cartRoute;
