@@ -61,23 +61,30 @@ const addtocart = async (req, res) => {
         res.status(500).json({ success: false, message: "Server error." });
     }
 };
-
 const removefromcart = async (req, res) => {
     try {
         const userId = req.user.id; // Extract user ID from fetchUser middleware
         const { productId } = req.body;
 
+        // Debugging: Log incoming data
+        console.log("User ID:", userId);
+        console.log("Request Body:", req.body);
+
         // Validate request body
         if (!productId) {
+            console.error("Product ID is missing in the request.");
             return res.status(400).json({
                 success: false,
                 message: "Product ID is required to remove an item from the cart.",
             });
         }
 
-        // Find the user
+        // Find the user in the database
         const user = await usermodel.findById(userId);
+        console.log("User Document:", user); // Log user details
+
         if (!user) {
+            console.error("User not found with ID:", userId);
             return res.status(404).json({ success: false, message: "User not found." });
         }
 
@@ -86,7 +93,10 @@ const removefromcart = async (req, res) => {
             (item) => item.product.toString() === productId
         );
 
+        console.log("Cart Item Index:", cartItemIndex); // Log cart index
+
         if (cartItemIndex === -1) {
+            console.error("Product not found in user's cart:", productId);
             return res.status(404).json({
                 success: false,
                 message: "Product not found in the user's cart.",
@@ -96,8 +106,9 @@ const removefromcart = async (req, res) => {
         // Remove the product from the cart
         user.cart.splice(cartItemIndex, 1);
 
-        // Save updated cart
+        // Save the updated cart
         await user.save();
+        console.log("Updated Cart:", user.cart);
 
         res.status(200).json({
             success: true,
@@ -109,7 +120,6 @@ const removefromcart = async (req, res) => {
         res.status(500).json({ success: false, message: "Server error." });
     }
 };
-
 
 
 export { addtocart,removefromcart };

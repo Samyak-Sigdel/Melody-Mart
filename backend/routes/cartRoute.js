@@ -9,7 +9,7 @@ import { addtocart, removefromcart } from "../controllers/cartController.js";
 const cartRoute = express.Router();
 
 cartRoute.post('/addtocart',fetchUser,addtocart);
-cartRoute.post('/removefromcart',removefromcart);
+cartRoute.post('/removefromcart',fetchUser,removefromcart);
 // cartRoute.get('/getcart',getcart);
 
 export default cartRoute;
