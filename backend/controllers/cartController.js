@@ -61,16 +61,18 @@ const addtocart = async (req, res) => {
         res.status(500).json({ success: false, message: "Server error." });
     }
 };
+
+
 const removefromcart = async (req, res) => {
     try {
-        const userId = req.user.id; // Extract user ID from fetchUser middleware
+        const userId = req.user.id; 
         const { productId } = req.body;
 
-        // Debugging: Log incoming data
+       
         console.log("User ID:", userId);
         console.log("Request Body:", req.body);
 
-        // Validate request body
+      
         if (!productId) {
             console.error("Product ID is missing in the request.");
             return res.status(400).json({
@@ -121,5 +123,31 @@ const removefromcart = async (req, res) => {
     }
 };
 
+const getCart = async (req, res) => {
+    try {
+        console.log("Request User Object:", req.user); // Debug log
+        if (!req.user || !req.user.id) {
+            return res.status(400).json({ success: false, message: "User ID is missing." });
+        }
 
-export { addtocart,removefromcart };
+        const userId = req.user.id; // Fetch user ID
+        console.log("User ID:", userId); // Debug log
+
+        const user = await usermodel.findById(userId).populate("cart.product");
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found." });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Cart retrieved successfully.",
+            cart: user.cart,
+        });
+    } catch (error) {
+        console.error("Error in getCart:", error.message);
+        res.status(500).json({ success: false, message: "Server error." });
+    }
+};
+
+
+export { addtocart,removefromcart ,getCart};
