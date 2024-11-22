@@ -81,16 +81,15 @@ const removefromcart = async (req, res) => {
             });
         }
 
-        // Find the user in the database
         const user = await usermodel.findById(userId);
-        console.log("User Document:", user); // Log user details
+        console.log("User Document:", user); 
 
         if (!user) {
             console.error("User not found with ID:", userId);
             return res.status(404).json({ success: false, message: "User not found." });
         }
 
-        // Check if the product exists in the user's cart
+      
         const cartItemIndex = user.cart.findIndex(
             (item) => item.product.toString() === productId
         );
