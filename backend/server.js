@@ -7,6 +7,7 @@ import connectCloudinary from './config/cloudinary.js'
 import userRoute from './routes/userRoute.js'
 import adminRoute from './routes/adminRoute.js'
 import cartRoute from './routes/cartRoute.js'
+import productRoute from './routes/productRoute.js'
 
 
 //app config 
@@ -25,6 +26,7 @@ app.use(cors())
 app.use('/api/admin',adminRoute)
 app.use('/api/user',userRoute)
 app.use('/api/cart',cartRoute)
+app.use('/api/product',productRoute)
 
 //localhost:4000/api/admin
 

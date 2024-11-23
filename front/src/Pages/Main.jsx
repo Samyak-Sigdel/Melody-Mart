@@ -7,6 +7,7 @@ import { ListCategory } from '../Components/ListCategory/ListCategory'
 import { Loginregnav } from '../Components/Loginregnav/Loginregnav'
 import ImageCarousel from '../Components/ImageCarousel/ImageCarousel'
 import BrandSlider from '../Components/BrandSlider/BrandSlider'
+import { NewCollections } from '../Components/NewCollections/NewCollection'
 
 
 
@@ -17,6 +18,8 @@ export const Main = () => {
     <div>
         <Loginregnav />
         <ImageCarousel />
+
+        <NewCollections />
 
       
         <ListCategory/>
