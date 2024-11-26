@@ -19,7 +19,7 @@ export const Main = () => {
         <Loginregnav />
         <ImageCarousel />
 
-        <NewCollections />
+        {/* <NewCollections /> */}
 
       
         <ListCategory/>
