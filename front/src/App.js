@@ -31,6 +31,8 @@ function App() {
           <Route path='/contactus' element={<Contactus />} />
           <Route path='/cart' element={<Cart />} />
 
+
+
           <Route path='/guitar' element={<Subcategory banner ={guitarbanner} category="guitar" />} />
           <Route path='/violin' element={<Subcategory  category="violin" />} />
           <Route path='/drums' element={<Subcategory banner = {drum} category="drums" />} />
