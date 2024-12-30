@@ -15,8 +15,6 @@ import ppp from './Assets/ppp.jpg';
 import drum from './Assets/drumsb.jpg'
 import { Cart } from './Pages/Cart';
 
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -26,7 +24,8 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/' element={<Main />} />
           <Route path='/category' element={<Category />} />
-          <Route path='/product/:productId' element={<Product />} /> {/* Product route */}
+          <Route path='/product/:productId' element={<Product />} /> 
+          {/* Product route */}
 
           <Route path='/contactus' element={<Contactus />} />
           <Route path='/cart' element={<Cart />} />
@@ -39,7 +38,7 @@ function App() {
           <Route path='/piano' element={<Subcategory banner = {ppp} category="piano" />} />
           <Route path='/flute' element={<Subcategory category="flute" />} />
 
-    
+       
         </Routes>
       </div>
     </BrowserRouter>

@@ -3,7 +3,11 @@
     align-items: center;
     gap: 45px;
 }
+.titles{
+    color: #f8f8f8;
+    text-decoration: none;
 
+}
 .login button{
     width: 157px;
     height: 58px;

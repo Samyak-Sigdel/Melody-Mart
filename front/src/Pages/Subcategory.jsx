@@ -14,7 +14,7 @@ export const Subcategory = (props) => {
     const { all_product } = useContext(Shopcontext);
 
     if (!all_product) {
-        return <div>Loading products...</div>; // Handles the case where all_product is undefined
+        return <div>Loading products...</div>; 
     }
 
     const filteredProducts = all_product.filter(item => item.category === props.category);
@@ -43,10 +43,10 @@ export const Subcategory = (props) => {
                     {filteredProducts.map((item, i) => (
                         <Items
                             key={i}
-                            id={item.id}
+                            _id={item._id}
                             name={item.name}
                             image={item.image}
-                            priceperday={item.priceperday}
+                            priceOptions={item.priceOptions}
                         />
                     ))}
                 </div>

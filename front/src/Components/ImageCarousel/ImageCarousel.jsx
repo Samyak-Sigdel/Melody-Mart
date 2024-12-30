@@ -49,16 +49,7 @@ const ImageCarousel = () => {
   const handleNavigation = (path) => {
     navigate(path);
 
-  // Handler to manually go to the next slide
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  // Handler to manually go to the previous slide
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
+ 
 
   };
 

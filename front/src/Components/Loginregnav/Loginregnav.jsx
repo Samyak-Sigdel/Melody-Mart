@@ -12,19 +12,21 @@ export const Loginregnav = () => {
       <div className="bg-black p-6">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 text-4xl text-white">
+          <Link to="/" className="flex items-center space-x-3 text-4xl text-white no-underline">
             <BsSpeakerFill />
-            <span className="self-center text-2xl font-semibold">
+            <span className="self-center text-2xl font-semibold text-white">
               Melody Mart
             </span>
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex space-x-6 text-white">
-            <Link to="/" className="hover:text-gray-400 text-xl">Home</Link>
-            <Link to="/category" className="hover:text-gray-400 text-xl">Category</Link>
-            <Link to="/" className="hover:text-gray-400 text-xl">Popular</Link>
-            <Link to="/contactus" className="hover:text-gray-400 text-xl">Contact</Link>
+          <div className="titles">
+          <div className="flex space-x-6 text-white no-underline">
+            <Link to="/" className="hover:text-gray-400 text-xl no-underline  text-white">Home</Link>
+            <Link to="/category" className="hover:text-gray-400 text-xl text-white no-underline">Category</Link>
+            <Link to="/#" className="hover:text-gray-400 text-xl text-white no-underline">Popular</Link>
+            <Link to="/contactus" className="hover:text-gray-400 text-xl text-white no-underline">Contact</Link>
+          </div>
           </div>
 
        
