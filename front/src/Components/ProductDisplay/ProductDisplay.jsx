@@ -1,28 +1,34 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './ProductDisplay.css';
 import { Shopcontext } from '../../Context/Shopcontext';
 
-
-const ProductDisplay = ({ product }) => {  // Changed from (props) to ({ product })
+const ProductDisplay = ({ product }) => {
   const { addToCart } = useContext(Shopcontext);
   const [quantity, setQuantity] = useState(1);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  
   if (!product) {
     return <p>Product details are unavailable. Please try again later.</p>;
   }
 
-  const getPrice = () => {
-    if (selectedOption === "Weekly") return product.weekly * quantity;
-    if (selectedOption === "HalfMonthly") return product.half_month * quantity;
-    if (selectedOption === "Monthly") return product.monthly * quantity;
-    return 0;
-  };
-
   const handleOptionChange = (e) => setSelectedOption(e.target.value);
   const increaseQuantity = () => setQuantity(quantity + 1);
   const decreaseQuantity = () => quantity > 1 && setQuantity(quantity - 1);
+
+  const getPrice = () => {
+    if (!product || !selectedOption) return 0; // Fallback for missing data
+    const selectedPriceOption = product.priceOptions.find(
+      (option) => option.duration === selectedOption
+    );
+    return selectedPriceOption ? selectedPriceOption.price * quantity : 0;
+  };
+
+  const handleAddToCart = () => {
+    addToCart(product._id); // Add the product to the cart
+    navigate('/cart'); // Navigate to the cart page
+  };
 
   return (
     <div className="product-container">
@@ -46,15 +52,19 @@ const ProductDisplay = ({ product }) => {  // Changed from (props) to ({ product
           onChange={handleOptionChange}
           className="option-dropdown"
         >
-          <option value="" disabled>Choose an option</option>
-          <option value="Weekly">Weekly - ₹{product.weekly || 'N/A'}</option>
-          <option value="HalfMonthly">Half Month - ₹{product.half_month || 'N/A'}</option>
-          <option value="Monthly">Monthly - ₹{product.monthly || 'N/A'}</option>
+          <option value="" disabled>
+            Choose an option
+          </option>
+          {product.priceOptions.map((option) => (
+            <option key={option._id} value={option.duration}>
+              {option.duration} - ₹{option.price}
+            </option>
+          ))}
         </select>
         <button
           className="add-to-cart"
           disabled={!selectedOption}
-          onClick={() => addToCart(product.id)}
+          onClick={handleAddToCart}
         >
           Add to Cart
         </button>

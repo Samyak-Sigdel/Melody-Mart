@@ -89,13 +89,12 @@ const ShopcontextProvider = (props) => {
         }
     };
 
-    // Calculate the total cart amount
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
                 const itemInfo = all_product.find(
-                    (product) => product.id === Number(item)
+                    (product) => product._id === item // Match with _id
                 );
                 if (itemInfo) {
                     totalAmount += itemInfo.new_price * cartItems[item];
@@ -104,7 +103,7 @@ const ShopcontextProvider = (props) => {
         }
         return totalAmount;
     };
-
+    
   
 
     const getTotalCartItems = () => {
