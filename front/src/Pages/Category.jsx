@@ -12,8 +12,6 @@ export const Category = () => {
       <Instruments />
       <Footer />
 
-        
-
 
     </div>
   )
